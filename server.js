@@ -5,7 +5,8 @@ const morgan = require("morgan"); // logger middleware
 
 // * port declaration
 const PORT = process.env.PORT || 1507;
-// it is recommended by most government agencies and health organizations that an individual exercises 150 minutes per week (7 days)
+// it is recommended by most health organizations that an individual exercises
+// 150 minutes per week (7 days) => 1507
 
 // * create express app instance
 const app = express();
@@ -13,7 +14,7 @@ const app = express();
 app.use(morgan("dev")); // log messages to console with morgan
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.use(express.static("public")); // allows use of public directory in static content
+app.use(express.static("public")); // use public dir in static content
 
 // * connect to mongoDB
 /*
