@@ -1,5 +1,6 @@
 # Workout Tracker
 
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/338ee0df484d43d39f113a57caff3c7c)](https://www.codacy.com/manual/thadkingcole/workout_tracker?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=thadkingcole/workout_tracker&amp;utm_campaign=Badge_Grade)
 ![GitHub top language](https://img.shields.io/github/languages/top/thadkingcole/workout_tracker)
 [![GitHub license](https://img.shields.io/github/license/thadkingcole/workout_tracker)](LICENSE)
 [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-v2.0%20adopted-ff69b4.svg)](code_of_conduct.md)
