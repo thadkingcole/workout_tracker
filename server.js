@@ -19,17 +19,20 @@ app.use(express.static("public")); // use public dir in static content
 // * connect to mongoDB
 /*
   DeprecationWarning: current Server Discovery and Monitoring engine is
-  deprecated, and will be removed in a future version. To use the new Server 
+  deprecated, and will be removed in a future version. To use the new Server
   Discover and Monitoring engine, pass option
     { useUnifiedTopology: true }
   to the MongoClient constructor.
 */
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/exerciseDB", {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-});
+mongoose.connect(
+  process.env.MONGODB_URI || "mongodb://localhost/workout-tracker",
+  {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  }
+);
 
 // TODO import routes
 
-// * listen to port
+// * listen on port
 app.listen(PORT, () => console.log(`http://localhost:${PORT}`));

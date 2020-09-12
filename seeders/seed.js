@@ -1,9 +1,18 @@
 let mongoose = require("mongoose");
 let db = require("../models");
 
-mongoose.connect("mongodb://localhost/workout", {
+/*
+  DeprecationWarning: current Server Discovery and Monitoring engine is
+  deprecated, and will be removed in a future version. To use the new Server
+  Discover and Monitoring engine, pass option
+    { useUnifiedTopology: true }
+  to the MongoClient constructor.
+*/
+
+mongoose.connect("mongodb://localhost/workout-tracker", {
   useNewUrlParser: true,
   useFindAndModify: false,
+  useUnifiedTopology: true,
 });
 
 let workoutSeed = [
