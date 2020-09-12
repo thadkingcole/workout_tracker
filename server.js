@@ -33,6 +33,7 @@ mongoose.connect(
 );
 
 // TODO import routes
+require("./routes/html")(app);
 
 // * listen on port
 app.listen(PORT, () => console.log(`http://localhost:${PORT}`));
