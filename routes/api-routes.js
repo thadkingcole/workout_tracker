@@ -35,8 +35,15 @@ module.exports = (app) => {
     }
   });
 
-  app.put("/api/workouts/:id", (req, res) => {
-    // TODO edit a speciifc workout in db
-    console.log(req);
+  app.put("/api/workouts/:id", async (req, res) => {
+    // edit a specifc workout in db
+    try {
+      const currentWorkout = await db.Workout.findById(req.params.id);
+      currentWorkout.exercises.push(req.body);
+      await currentWorkout.save();
+      res.status(201).json(currentWorkout); // 201 = created
+    } catch (error) {
+      res.status(500).json(error);
+    }
   });
 };
