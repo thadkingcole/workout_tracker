@@ -3,26 +3,13 @@ const db = require("../models");
 
 // * export routes associated with the API
 module.exports = (app) => {
+  // get all workouts from db
   app.get("/api/workouts", async (req, res) => {
-    // get all workouts from db
     try {
       const allWorkouts = await db.Workout.find({});
-      // allWorkouts.getTotalDuration();
-      res.json(allWorkouts);
+      res.status(200).json(allWorkouts);
     } catch (error) {
-      res.json(error);
-    }
-  });
-
-  app.get("/?id=:id", async (req, res) => {
-    // TODO get specific workout by id from db
-    console.log("You made it here!");
-    try {
-      const oneWorkout = await db.Workout.findById(req.params.id);
-      console.log(oneWorkout);
-      res.json(oneWorkout);
-    } catch (error) {
-      res.json(error);
+      res.status(500).json(error);
     }
   });
 
