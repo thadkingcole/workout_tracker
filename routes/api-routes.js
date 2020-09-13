@@ -23,9 +23,16 @@ module.exports = (app) => {
     }
   });
 
-  app.post("/api/workouts", (req, res) => {
-    // TODO add a new workout to db
-    console.log(req);
+  app.post("/api/workouts", async (req, res) => {
+    // get current time for new workout
+    const now = new Date();
+    try {
+      // add a new workout to db
+      const newWorkout = await db.Workout.create({ day: now });
+      res.status(201).json(newWorkout); // 201 = created
+    } catch (error) {
+      res.status(500).json(error);
+    }
   });
 
   app.put("/api/workouts/:id", (req, res) => {
