@@ -9,6 +9,7 @@ module.exports = (app) => {
       const allWorkouts = await db.Workout.find({});
       res.status(200).json(allWorkouts);
     } catch (error) {
+      console.error(error);
       res.status(500).json(error);
     }
   });
@@ -19,6 +20,7 @@ module.exports = (app) => {
       const workoutData = await db.Workout.find({});
       res.status(200).json(workoutData);
     } catch (error) {
+      console.error(error);
       res.status(500).json(error);
     }
   });
@@ -31,6 +33,7 @@ module.exports = (app) => {
       const newWorkout = await db.Workout.create({ day: now });
       res.status(201).json(newWorkout); // 201 = created
     } catch (error) {
+      console.error(error);
       res.status(500).json(error);
     }
   });
@@ -43,6 +46,7 @@ module.exports = (app) => {
       await currentWorkout.save();
       res.status(201).json(currentWorkout); // 201 = created
     } catch (error) {
+      console.error(error);
       res.status(500).json(error);
     }
   });
